@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { MyContext } from "../../context/AddFavoriteContext";
 
 const Navbar = () => {
+  const context = useContext(MyContext);
+
   return (
     <header className='w-full flex justify-between items-center fixed top-0 bg-[#032541] py-4 px-5 lg:px-16  '>
       <nav>
@@ -14,7 +18,7 @@ const Navbar = () => {
             <Link to='/profile'>Profile</Link>
           </li>
           <li>
-            <Link to='/login'>Login</Link>
+            <Link to='/login'>{context?.isLogin ? "Logout" : "Login"}</Link>
           </li>
         </ul>
       </nav>
