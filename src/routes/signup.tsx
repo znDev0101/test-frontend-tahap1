@@ -24,7 +24,7 @@ export default function SignUp() {
     setIsLoading(true);
     toast("Loading...");
     const response = await axios.post(
-      "https://vercel.live/link/backend-api-pied-three.vercel.app?via=project-dashboard-alias-list&p=1/api/signup",
+      "https://backend-api-pied-three.vercel.app/api/signup",
       { email, password },
       {
         withCredentials: true,

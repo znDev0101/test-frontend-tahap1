@@ -24,7 +24,7 @@ export default function Login() {
     try {
       setIsLoading(true);
       const response = await axios.post(
-        "https://vercel.live/link/backend-api-pied-three.vercel.app?via=project-dashboard-alias-list&p=1/api/login",
+        "https://backend-api-pied-three.vercel.app/api/login",
         { email, password },
         {
           withCredentials: true,
@@ -52,12 +52,9 @@ export default function Login() {
   const handleLogout = async (): Promise<void> => {
     try {
       setIsLoading(true);
-      await axios.post(
-        "https://vercel.live/link/backend-api-pied-three.vercel.app?via=project-dashboard-alias-list&p=1/api/logout",
-        {
-          withCredentials: true,
-        }
-      );
+      await axios.post("https://backend-api-pied-three.vercel.app/api/logout", {
+        withCredentials: true,
+      });
       setIsLoading(false);
       context?.setIsLogin(false);
     } catch (error) {
