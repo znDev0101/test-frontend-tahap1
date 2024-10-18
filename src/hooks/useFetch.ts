@@ -22,11 +22,10 @@ export function useFetch(URLAPI: string) {
     }
   };
 
-  const controller = new AbortController();
-
   useEffect(() => {
     getData();
     return () => {
+      const controller = new AbortController();
       controller.abort();
     };
   }, []);

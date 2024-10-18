@@ -49,7 +49,7 @@ export default function Login() {
     }
   };
 
-  const handleLogout = async () => {
+  const handleLogout = async (): Promise<void> => {
     try {
       setIsLoading(true);
       await axios.post("http://localhost:5000/api/logout", {

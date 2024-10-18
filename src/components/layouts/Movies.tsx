@@ -11,7 +11,7 @@ const Movies = () => {
     "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1"
   );
 
-  const fetchMovies = async () => {
+  const fetchMovies = async (): Promise<void> => {
     try {
       const responses = await Promise.all([
         axios.get(
@@ -39,10 +39,14 @@ const Movies = () => {
   // UseEffect to fetch movies once when the component mounts
   useEffect(() => {
     fetchMovies();
+    return () => {
+      const controller = new AbortController();
+      controller.abort();
+    };
   }, []);
 
   // Load more movies (6 at a time)
-  const loadMore = () => {
+  const loadMore = (): void => {
     setVisibleMovies((prevCount) => prevCount + 6);
   };
 

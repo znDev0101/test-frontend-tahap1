@@ -17,7 +17,9 @@ export default function SignUp() {
   const [message, setMessage] = useState<string>("");
   const [isLogin, setIsLogin] = useState<boolean>(false);
 
-  const handleSubmit = async (event: React.FormEvent<UsernameFormElement>) => {
+  const handleSubmit = async (
+    event: React.FormEvent<UsernameFormElement>
+  ): Promise<void> => {
     event.preventDefault();
     setIsLoading(true);
     toast("Loading...");
