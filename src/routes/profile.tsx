@@ -8,9 +8,9 @@ export default function Profile() {
 
   return (
     <div className='w-full my-20'>
-      <div className='max-w-7xl mx-auto'>
+      <div className='max-w-7xl mx-auto px-5'>
         <h1 className='text-2xl font-bold'>List favorite Movies</h1>
-        <div className='flex mt-10 gap-5'>
+        <div className='flex flex-wrap mt-10 gap-5'>
           {results.map((data: any, i: number) => {
             return <CardMovies data={data} key={i} />;
           })}

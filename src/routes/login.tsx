@@ -65,7 +65,7 @@ export default function Login() {
   return (
     <div className='w-full h-screen flex justify-center items-center'>
       <Toaster position='bottom-center' reverseOrder={false} />
-      <div className='w-96 border border-gray-500 rounded-md p-10'>
+      <div className='w-96 lg:border lg:border-gray-500 rounded-md p-10'>
         <form onSubmit={handleSubmit}>
           <div className='flex flex-col'>
             <label htmlFor='email'>Email</label>

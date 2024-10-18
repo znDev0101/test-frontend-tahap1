@@ -39,9 +39,8 @@ const Movies = () => {
         ),
       ]);
 
-      // Concatenate all results from multiple pages
       const allMovies = responses.flatMap((response) => response.data.results);
-      setMoviesPopularPage(allMovies); // Store all 60 movies
+      setMoviesPopularPage(allMovies);
     } catch (error) {
       console.error("Error fetching movies:", error);
     }
@@ -56,7 +55,6 @@ const Movies = () => {
     };
   }, []);
 
-  // Load more movies (6 at a time)
   const loadMore = (): void => {
     setVisibleMovies((prevCount) => prevCount + 6);
   };

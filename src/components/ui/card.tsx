@@ -25,7 +25,7 @@ const CardMovies = ({ data }: { data: TypeMovies }) => {
   };
 
   return (
-    <div className='w-44 lg:w-52 border border-gray-600 rounded-md overflow-hidden'>
+    <div className='w-40 lg:w-52 border border-gray-600 rounded-md overflow-hidden'>
       <Toaster position='bottom-center' reverseOrder={false} />
       <div className='flex flex-col'>
         <img src={path_img + data.poster_path} alt='poster' />
