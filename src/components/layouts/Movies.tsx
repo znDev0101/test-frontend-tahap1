@@ -13,18 +13,29 @@ const Movies = () => {
 
   const fetchMovies = async (): Promise<void> => {
     try {
+      const options = {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+          Authorization: `Bearer ${import.meta.env.VITE_TOKEN_AUTH}`,
+        },
+      };
       const responses = await Promise.all([
         axios.get(
-          "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1"
+          "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+          options
         ),
         axios.get(
-          "https://api.themoviedb.org/3/movie/popular?language=en-US&page=2"
+          "https://api.themoviedb.org/3/movie/popular?language=en-US&page=2",
+          options
         ),
         axios.get(
-          "https://api.themoviedb.org/3/movie/popular?language=en-US&page=3"
+          "https://api.themoviedb.org/3/movie/popular?language=en-US&page=3",
+          options
         ),
         axios.get(
-          "https://api.themoviedb.org/3/movie/popular?language=en-US&page=4"
+          "https://api.themoviedb.org/3/movie/popular?language=en-US&page=4",
+          options
         ),
       ]);
 
