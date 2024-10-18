@@ -10,7 +10,7 @@ const CardMovies = ({ data }: { data: TypeMovies }) => {
   const path_img: string = "https://image.tmdb.org/t/p/w500/";
   const context = useContext(MyContext);
 
-  const { loading, addFavoriteMovie } = useAddFavoriteMovie(
+  const { addFavoriteMovie } = useAddFavoriteMovie(
     "https://api.themoviedb.org/3/account/12924709/favorite",
     data.id
   );

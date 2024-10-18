@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { MyContext } from "../context/AddFavoriteContext";
 
